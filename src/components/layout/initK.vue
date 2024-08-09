@@ -1,5 +1,9 @@
 <template>
-  <q-select v-model="lang" :options="langOptions" dense borderless emit-value map-options options-dense />
+  <div>
+
+    <q-select v-model="lang" :options="[]" dense borderless emit-value map-options options-dense />
+    <slot></slot>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -9,17 +13,12 @@ import { ref, onMounted, WritableComputedRef } from 'vue';
 
 const { locale } = useI18n({ useScope: 'global' })
 
-
-const langOptions = [
-  { value: 'en-US', label: 'English' },
-  { value: 'zh-CN', label: '中文' }
-]
-
 const $q = useQuasar()
 const lang = ref<WritableComputedRef<string>>(locale)
 
 onMounted(() => {
 
   lang.value = $q.lang.isoName
+  console.log(lang.value)
 })
 </script>

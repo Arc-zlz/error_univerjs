@@ -10,11 +10,14 @@
 import { Todo, Meta } from 'components/models';
 import ExampleComponent from 'components/ExampleComponent.vue';
 import { ref } from 'vue';
+import { useI18n } from 'vue-i18n';
 
+
+const { t: $t } = useI18n()
 const todos = ref<Todo[]>([
   {
     id: 1,
-    content: 'ct1'
+    content: $t('welcome')
   },
   {
     id: 2,
