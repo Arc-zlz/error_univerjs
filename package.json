@@ -12,6 +12,7 @@
     "dev": "quasar dev",
     "dev:quasar": "quasar dev -m electron",
     "build": "quasar build",
+    "build:quasar": "quasar build -m electron --download.mirrorOptions.mirror=https://registry.npmmirror.com/mirrors/electron/",
     "lint:lint-staged": "lint-staged"
   },
   "dependencies": {
@@ -24,7 +25,9 @@
     "vue-router": "^4.0.0"
   },
   "devDependencies": {
+    "@commitlint/cli": "^19.4.0",
     "@commitlint/config-conventional": "^19.2.2",
+    "@electron/packager": "^18.3.2",
     "@intlify/vite-plugin-vue-i18n": "^3.3.1",
     "@quasar/app-vite": "^1.3.0",
     "@types/node": "^12.20.21",
@@ -44,7 +47,7 @@
     "unplugin-vue-components": "^0.27.3"
   },
   "engines": {
-    "node": "^18 || ^16 || ^14.19",
+    "node": "^18 || ^16 || ^20",
     "npm": ">= 6.13.4",
     "yarn": ">= 1.21.1"
   },

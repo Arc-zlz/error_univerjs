@@ -1,41 +1,5 @@
-# Quasar App (noise)
+# 文档提示
 
-A Quasar Project
+关于 electron 打包问题,需要下载 electron 压缩包,速度非常缓慢的问题,
 
-## Install the dependencies
-```bash
-yarn
-# or
-npm install
-```
-
-### Start the app in development mode (hot-code reloading, error reporting, etc.)
-```bash
-quasar dev
-```
-
-
-### Lint the files
-```bash
-yarn lint
-# or
-npm run lint
-```
-
-
-### Format the files
-```bash
-yarn format
-# or
-npm run format
-```
-
-
-
-### Build the app for production
-```bash
-quasar build
-```
-
-### Customize the configuration
-See [Configuring quasar.config.js](https://v2.quasar.dev/quasar-cli-vite/quasar-config-js).
+解决方案: [两种方案.1 下载包放在本地机器 2. 修改镜像](https://www.electronjs.org/zh/docs/latest/tutorial/installation '官方文档')
