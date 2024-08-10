@@ -112,7 +112,7 @@ module.exports = configure(function (/* ctx */) {
       // directives: [],
 
       // Quasar plugins
-      plugins: [],
+      plugins: ['AppFullscreen', 'LocalStorage', 'SessionStorage'],
     },
 
     // animations: 'all', // --- includes all animations

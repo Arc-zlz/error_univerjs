@@ -1,93 +1,85 @@
 <template>
-  <initBox>
-    <q-layout view="lHh Lpr lFf">
+  <div class="main-layout">
+    <q-layout
+      view="lHh Lpr lff"
+      container
+      style="height: 100vh"
+      class="shadow-2 rounded-borders"
+    >
       <q-header elevated>
-        <q-toolbar>
-          <q-btn flat dense round icon="menu" aria-label="Menu" @click="toggleLeftDrawer" />
-
+        <q-toolbar class="bg-white text-black shadow-none">
           <q-toolbar-title>
-            Quasar App
+            <div style="display: flex; align-items: center">
+              <!-- <div>{{ $t(changeMenuItem.label) }}</div> -->
+              <div class="q-mx-sm">
+                <Breadcrumbs />
+              </div>
+            </div>
           </q-toolbar-title>
-
-          <div>Quasar v{{ $q.version }}</div>
           <LangSelect />
+          <q-avatar
+            size="30px"
+            class="q-mb-sm"
+            v-morph:MinHeader:boxes:500="menuFold"
+          >
+            <img src="https://cdn.quasar.dev/img/boy-avatar.png" />
+          </q-avatar>
         </q-toolbar>
       </q-header>
 
-      <q-drawer v-model="leftDrawerOpen" show-if-above bordered>
-        <q-list>
-          <q-item-label header>
-            Essential Links{{ $t('menu.home') }}
-          </q-item-label>
-
-          <EssentialLink v-for="link in essentialLinks" :key="link.title" v-bind="link" />
-        </q-list>
+      <q-drawer
+        v-model="drawer"
+        show-if-above
+        :width="menuFold === 'MaxHeader' ? 180 : 60"
+        :breakpoint="400"
+      >
+        <MenuList />
+        <div class="tagger-btn">
+          <q-btn
+            size=".7rem"
+            color="primary"
+            @click="morphHeaderFunc()"
+            :icon="
+              menuFold === 'MaxHeader'
+                ? 'keyboard_double_arrow_left'
+                : 'keyboard_double_arrow_right'
+            "
+            round
+          />
+        </div>
       </q-drawer>
 
       <q-page-container>
         <router-view />
       </q-page-container>
     </q-layout>
-  </initBox>
+  </div>
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue';
-import EssentialLink, { EssentialLinkProps } from 'components/EssentialLink.vue';
-import LangSelect from 'components/LangSelect.vue';
-import initBox from 'components/layout/initK.vue';
+import LangSelect from 'components/layout/LangSelect.vue';
+import Breadcrumbs from 'components/layout/MenuBreadcrumbs.vue';
+import MenuList from 'components/layout/MenuList.vue';
+import { useSysStore } from 'stores/systemctl';
+import { storeToRefs } from 'pinia';
 
-import { useI18n } from 'vue-i18n'
+const sysStore = useSysStore();
+const { menuFold } = storeToRefs(sysStore);
+const drawer = ref<boolean>(false);
 
-const { t: $t } = useI18n()
-const essentialLinks = ref<EssentialLinkProps[]>([
-  {
-    title: $t('home'),
-    caption: 'quasar.dev',
-    icon: 'school',
-    link: 'https://quasar.dev'
-  },
-  {
-    title: 'Github',
-    caption: 'github.com/quasarframework',
-    icon: 'code',
-    link: 'https://github.com/quasarframework'
-  },
-  {
-    title: 'Discord Chat Channel',
-    caption: 'chat.quasar.dev',
-    icon: 'chat',
-    link: 'https://chat.quasar.dev'
-  },
-  {
-    title: 'Forum',
-    caption: 'forum.quasar.dev',
-    icon: 'record_voice_over',
-    link: 'https://forum.quasar.dev'
-  },
-  {
-    title: 'Twitter',
-    caption: '@quasarframework',
-    icon: 'rss_feed',
-    link: 'https://twitter.quasar.dev'
-  },
-  {
-    title: 'Facebook',
-    caption: '@QuasarFramework',
-    icon: 'public',
-    link: 'https://facebook.quasar.dev'
-  },
-  {
-    title: 'Quasar Awesome',
-    caption: 'Community Quasar projects',
-    icon: 'favorite',
-    link: 'https://awesome.quasar.dev'
-  }
-]);
-
-const leftDrawerOpen = ref(false)
-
-function toggleLeftDrawer() {
-  leftDrawerOpen.value = !leftDrawerOpen.value
+//  切换菜单
+function morphHeaderFunc() {
+  sysStore.setMenuFold();
 }
 </script>
+
+<style lang="scss" scoped>
+.main-layout {
+  .tagger-btn {
+    position: absolute;
+    bottom: 50%;
+    right: -0.85rem;
+  }
+}
+</style>

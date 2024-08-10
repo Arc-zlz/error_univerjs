@@ -3,7 +3,10 @@
   "success": "Action was successful",
   "welcome": "welcome",
   "menu": {
-    "home": "Home"
+    "home": "Home",
+    "document": "documents",
+    "aboutUs": "aboutUs",
+    "files": "files"
   },
   "isoName": "zh-CN",
   "nativeName": "中文(简体)",
