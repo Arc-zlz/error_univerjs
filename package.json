@@ -13,7 +13,8 @@
     "dev:quasar": "quasar dev -m electron",
     "build": "quasar build",
     "build:quasar": "quasar build -m electron --download.mirrorOptions.mirror=https://registry.npmmirror.com/mirrors/electron/",
-    "lint:lint-staged": "lint-staged"
+    "lint:lint-staged": "lint-staged",
+    "prepare": "husky"
   },
   "dependencies": {
     "@quasar/extras": "^1.16.4",
