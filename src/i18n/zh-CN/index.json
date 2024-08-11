@@ -33,7 +33,7 @@
     "selectedRecords": "",
     "recordsPerPage": "每页的行数:",
     "allRows": "全部",
-    "pagination": "",
+    "pagination": "分页",
     "columns": "列"
   },
   "editor": {
@@ -84,5 +84,9 @@
   "tree": {
     "noNodes": "没有可用节点",
     "noResults": "找不到匹配的节点"
+  },
+  "home": {
+    "info": "详情",
+    "goWriting": "去写作"
   }
 }

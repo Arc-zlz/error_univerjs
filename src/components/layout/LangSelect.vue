@@ -1,6 +1,7 @@
 <template>
   <div class="q-mx-sm cursor-pointer">
-    <q-icon name="event" size="1.3rem" @click="fullscreenFunc" />
+    <q-icon name="event" size="1.3rem" @click="fullscreenFunc" v-if="!isFull" />
+    <q-icon name="event" size="1.3rem" @click="fullscreenFunc" v-else />
   </div>
 
   <q-select
@@ -22,6 +23,7 @@ import { useI18n } from 'vue-i18n';
 import { ref, onMounted, WritableComputedRef } from 'vue';
 
 const { locale } = useI18n({ useScope: 'global' });
+const isFull = ref<boolean>(false);
 
 const langOptions = [
   { value: 'en-US', label: 'English' },
@@ -32,15 +34,12 @@ const $q = useQuasar();
 const lang = ref<WritableComputedRef<string>>(locale);
 
 function fullscreenFunc() {
-  $q.fullscreen
-    .request()
-    .then(() => {
-      // success!
-    })
-    .catch((err) => {
-      // oh, no!!!
-      console.log(err, '全屏错误');
-    });
+  if (isFull.value) {
+    $q.fullscreen.exit();
+  } else {
+    $q.fullscreen.request();
+  }
+  isFull.value = !isFull.value;
 }
 
 onMounted(() => {

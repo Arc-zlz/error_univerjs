@@ -8,7 +8,7 @@ const routes: RouteRecordRaw[] = [
       {
         name: 'home',
         path: '',
-        component: () => import('pages/IndexPage.vue'),
+        component: () => import('pages/HomePage.vue'),
       },
       {
         name: 'document',
@@ -24,6 +24,17 @@ const routes: RouteRecordRaw[] = [
         name: 'aboutUs',
         path: 'aboutUs',
         component: () => import('pages/AboutUs.vue'),
+      },
+    ],
+  },
+  {
+    path: '/info',
+    component: () => import('src/layouts/EmptyLayout.vue'),
+    children: [
+      {
+        name: 'documentInfo',
+        path: 'document/:id',
+        component: () => import('src/pages/document/DocumentInfo.vue'),
       },
     ],
   },

@@ -84,5 +84,9 @@
   "tree": {
     "noNodes": "没有可用节点",
     "noResults": "找不到匹配的节点"
+  },
+  "home": {
+    "info": "info",
+    "goWriting": "goWriting"
   }
 }

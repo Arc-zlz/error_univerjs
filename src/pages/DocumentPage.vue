@@ -1,7 +1,11 @@
 <template>
-  <div>文档管理</div>
+  <div>
+    <CardList />
+  </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import CardList from 'components/document/CardList.vue';
+</script>
 
 <style scoped></style>
