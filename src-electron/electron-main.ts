@@ -1,4 +1,4 @@
-import { app, BrowserWindow } from 'electron';
+import { app, BrowserWindow, ipcMain } from 'electron';
 import path from 'path';
 import os from 'os';
 
@@ -34,6 +34,11 @@ function createWindow() {
       mainWindow?.webContents.closeDevTools();
     });
   }
+  ipcMain.on('set-title', (event, title) => {
+    const webContents = event.sender;
+    const win = BrowserWindow.fromWebContents(webContents);
+    if (win) win.setTitle(title);
+  });
 
   mainWindow.on('closed', () => {
     mainWindow = undefined;

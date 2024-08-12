@@ -8,5 +8,5 @@
   "typescript.tsdk": "node_modules/typescript/lib",
   "i18n-ally.localesPaths": ["src/i18n"],
   "i18n-ally.keystyle": "nested",
-  "cSpell.words": ["intlify", "Persistedstate", "Pinia", "unocss"]
+  "cSpell.words": ["intlify", "Persistedstate", "Pinia", "univer", "unocss"]
 }

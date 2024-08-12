@@ -6,7 +6,8 @@
     "home": "主页",
     "document": "文档管理",
     "aboutUs": "关于我们",
-    "files": "文件管理"
+    "files": "文件管理",
+    "documentInfo": "文档详情"
   },
   "isoName": "zh-CN",
   "nativeName": "中文(简体)",

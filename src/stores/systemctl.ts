@@ -3,7 +3,7 @@ import { RouteLocationMatched } from 'vue-router';
 
 export const useSysStore = defineStore('sys', {
   state: () => ({
-    menuFold: 'MaxHeader',
+    menuFold: 'MinHeader',
     breadcrumbsList: <RouteLocationMatched[]>[],
   }),
   getters: {},

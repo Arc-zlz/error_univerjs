@@ -1,9 +1,11 @@
 <template>
-  <q-page class="flex">
-    <CardList />
+  <q-page class="row items-center justify-evenly">
+    <q-btn @click="test()">d点击</q-btn>
   </q-page>
 </template>
 
 <script setup lang="ts">
-import CardList from 'components/home/CardList.vue';
+function test() {
+  window.electronAPI.setTitle('titsadadadle');
+}
 </script>

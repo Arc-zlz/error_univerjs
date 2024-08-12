@@ -8,8 +8,12 @@
 // Configuration for your app
 // https://v2.quasar.dev/quasar-cli-vite/quasar-config-js
 
-import { configure } from 'quasar/wrappers';
-import path from 'path';
+// import { configure } from 'quasar/wrappers';
+const { configure } = require('quasar/wrappers');
+// import path from 'path';
+const path = require('path');
+// import { univerPlugin } from '@univerjs/vite-plugin';
+const { univerPlugin } = require('@univerjs/vite-plugin');
 
 module.exports = configure(function (/* ctx */) {
   return {
@@ -28,7 +32,7 @@ module.exports = configure(function (/* ctx */) {
     // app boot file (/src/boot)
     // --> boot files are part of "main.js"
     // https://v2.quasar.dev/quasar-cli-vite/boot-files
-    boot: ['i18n', 'axios', 'unocss'],
+    boot: ['i18n', 'axios', 'vxeTree'],
 
     // https://v2.quasar.dev/quasar-cli-vite/quasar-config-js#css
     css: ['app.scss'],
@@ -88,7 +92,11 @@ module.exports = configure(function (/* ctx */) {
             include: path.resolve(__dirname, './src/i18n/**'),
           },
         ],
-        ['unocss/vite'],
+        // [
+        //   univerPlugin({
+        //     css: false,
+        //   }),
+        // ],
       ],
     },
 

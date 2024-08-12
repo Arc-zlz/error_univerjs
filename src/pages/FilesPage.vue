@@ -10,7 +10,7 @@ import { db } from 'src/db';
 async function addFriend() {
   try {
     // Add the new friend!
-    const id = await db.friends.add({
+    await db.friends.add({
       name: '藏',
       age: 12,
     });
