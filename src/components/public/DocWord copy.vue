@@ -1,6 +1,6 @@
 <template>
-  <div class="">
-    <div id="app"></div>
+  <div class="h-[100vh]">
+    <div class="canvas-editor"></div>
   </div>
 </template>
 

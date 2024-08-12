@@ -17,7 +17,17 @@
     "prepare": "husky"
   },
   "dependencies": {
+    "@hufe921/canvas-editor": "^0.9.89",
     "@quasar/extras": "^1.16.4",
+    "@univerjs/core": "^0.2.7",
+    "@univerjs/design": "^0.2.7",
+    "@univerjs/docs": "^0.2.7",
+    "@univerjs/docs-ui": "^0.2.7",
+    "@univerjs/engine-formula": "^0.2.7",
+    "@univerjs/engine-numfmt": "^0.2.7",
+    "@univerjs/engine-render": "^0.2.7",
+    "@univerjs/facade": "^0.2.7",
+    "@univerjs/ui": "^0.2.7",
     "axios": "^1.2.1",
     "dexie": "^4.0.8",
     "pinia": "^2.0.11",
