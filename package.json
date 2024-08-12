@@ -17,6 +17,7 @@
     "prepare": "husky"
   },
   "dependencies": {
+    "@hufe921/canvas-editor": "^0.9.89",
     "@quasar/extras": "^1.16.4",
     "@univerjs/core": "^0.2.7",
     "@univerjs/design": "^0.2.7",

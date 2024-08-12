@@ -17,7 +17,7 @@
 
     <template v-slot:after>
       <div class="q-pa-md">
-        <DocWord />
+        <DocWord></DocWord>
       </div>
     </template>
   </q-splitter>
