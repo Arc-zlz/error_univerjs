@@ -14,6 +14,7 @@ module.exports = {
       [
         'feat', // 新增功能
         'fix', // 修复缺陷
+        'page', // 页面修改
         'docs', // 文档变更
         'style', // 代码格式（不影响功能，例如空格、分号等格式修正）
         'refactor', // 代码重构（不包括 bug 修复、功能新增）
@@ -46,6 +47,7 @@ module.exports = {
         { value: 'fix',      name: '修复:     🐛  修复缺陷', emoji: '🐛' },
         { value: 'feat',     name: '特性:     ✨  新增功能', emoji: '✨' },
         { value: 'docs',     name: '文档:     📝  文档变更', emoji: '📝' },
+        { value: 'page',     name: '页面:     ❇️  页面样式的修改及调整', emoji: '❇️' },
         { value: 'style',    name: '格式:     💄  代码格式（不影响功能，例如空格、分号等格式修正）', emoji: '💄' },
         { value: 'refactor', name: '重构:     ♻️  代码重构（不包括 bug 修复、功能新增）', emoji: '♻️' },
         { value: 'perf',     name: '性能:     ⚡️  性能优化', emoji: '⚡️' },
@@ -58,8 +60,9 @@ module.exports = {
     scopes: [
       { value: 'app', name: 'app:       系统业务' },
       { value: 'home', name: 'home:      首页相关' },
-      { value: 'account', name: 'account:   账户相关' },
-      { value: 'comment', name: 'comment:   评论相关' },
+      { value: 'document', name: 'account:  文档管理' },
+      { value: 'files', name: 'comment:   文件管理' },
+      { value: 'about', name: 'comment:   关于我们' },
     ],
     useEmoji: true,
     emojiAlign: 'center',

@@ -29,7 +29,7 @@ const routes: RouteRecordRaw[] = [
   },
   {
     path: '/info',
-    component: () => import('src/layouts/EmptyLayout.vue'),
+    component: () => import('src/layouts/DocumentLayout.vue'),
     children: [
       {
         name: 'documentInfo',

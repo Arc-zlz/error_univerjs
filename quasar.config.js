@@ -8,12 +8,8 @@
 // Configuration for your app
 // https://v2.quasar.dev/quasar-cli-vite/quasar-config-js
 
-// import { configure } from 'quasar/wrappers';
-const { configure } = require('quasar/wrappers');
-// import path from 'path';
 const path = require('path');
-// import { univerPlugin } from '@univerjs/vite-plugin';
-const { univerPlugin } = require('@univerjs/vite-plugin');
+const { configure } = require('quasar/wrappers');
 
 module.exports = configure(function (/* ctx */) {
   return {
