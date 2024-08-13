@@ -6,7 +6,7 @@
 
   <q-select
     placeholder="请选择语言"
-    v-model="lang"
+    v-model="langRef"
     :options="langOptions"
     color="teal"
     dense
@@ -14,6 +14,7 @@
     emit-value
     map-options
     options-dense
+    @update:model-value="changeLang"
   />
 </template>
 
@@ -21,6 +22,9 @@
 import { useQuasar } from 'quasar';
 import { useI18n } from 'vue-i18n';
 import { ref, onMounted, WritableComputedRef } from 'vue';
+// import { storeToRefs } from 'pinia';
+import { useSysStore } from 'src/stores/systemctl';
+import { storeToRefs } from 'pinia';
 
 const { locale } = useI18n({ useScope: 'global' });
 const isFull = ref<boolean>(false);
@@ -30,8 +34,10 @@ const langOptions = [
   { value: 'zh-CN', label: '中文' },
 ];
 
+const sysStore = useSysStore();
+const { lang } = storeToRefs(sysStore);
 const $q = useQuasar();
-const lang = ref<WritableComputedRef<string>>(locale);
+const langRef = ref<WritableComputedRef<string>>(locale);
 
 function fullscreenFunc() {
   if (isFull.value) {
@@ -42,7 +48,11 @@ function fullscreenFunc() {
   isFull.value = !isFull.value;
 }
 
+function changeLang(type: string) {
+  sysStore.setLang(type);
+}
+
 onMounted(() => {
-  lang.value = $q.lang.isoName;
+  langRef.value = lang.value;
 });
 </script>

@@ -7,12 +7,6 @@
       :key="item"
     >
       <q-item>
-        <q-item-section avatar>
-          <q-avatar>
-            <img src="https://cdn.quasar.dev/img/avatar2.jpg" />
-          </q-avatar>
-        </q-item-section>
-
         <q-item-section>
           <q-item-label>Ti__tle</q-item-label>
           <q-item-label caption>Subhead</q-item-label>
@@ -25,6 +19,12 @@
           <div class="text-[.8rem]">
             更新时间：<span class="text-[#999]">2012-12-12 23:31:22</span>
           </div>
+          <!-- 联网功能 -->
+          <!-- <div class="mx-3 mt-2">
+            <q-avatar v-for="n in 5" :key="n" size="30px" class="overlapping" :style="`left: ${-n * 10}px`">
+              <img :src="`https://cdn.quasar.dev/img/avatar${n + 1}.jpg`">
+            </q-avatar>
+          </div> -->
           <div class="flex justify-end mt-2">
             <q-btn size="sm" color="primary" icon="info" class="mr-2">
               <span class="ml-[6px] inline-block">{{ $t('home.info') }}</span>
@@ -33,7 +33,7 @@
               color="secondary"
               icon="edit"
               size="sm"
-              :to="'/info/document/' + item"
+              :to="'/project/documentInfo/'"
             >
               <span class="ml-[6px] inline-block"
                 >{{ $t('home.goWriting') }}

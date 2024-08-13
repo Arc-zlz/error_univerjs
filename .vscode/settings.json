@@ -9,10 +9,13 @@
   "i18n-ally.localesPaths": ["src/i18n"],
   "i18n-ally.keystyle": "nested",
   "cSpell.words": [
+    "devui",
+    "dragdrop",
     "hufe",
     "intlify",
     "Persistedstate",
     "Pinia",
+    "tailwindcss",
     "univer",
     "unocss"
   ]

@@ -4,10 +4,11 @@
   "welcome": "欢迎你的到来",
   "menu": {
     "home": "主页",
-    "document": "文档管理",
+    "project": "项目管理",
     "aboutUs": "关于我们",
     "files": "文件管理",
-    "documentInfo": "文档详情"
+    "documentInfo": "文档详情",
+    "plug": "插件管理"
   },
   "isoName": "zh-CN",
   "nativeName": "中文(简体)",

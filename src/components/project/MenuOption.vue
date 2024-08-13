@@ -4,15 +4,25 @@
       class="w-[25rem] bg-fff w-min-[300px]"
       v-morph:Max:boxes:200.resize="menuStatus"
     >
-      <div class="p-2 flex justify-between">
-        <div>这是标题</div>
+      <div class="pl-2 pr-5 flex justify-between items-end">
         <div>
-          <q-icon
-            name="close"
-            class="hover:text-cyan-400 cursor-pointer"
-            @click.stop="changeMenuStatus()"
-          />
+          <slot name="tool"></slot>
+          <!-- 缩放 -->
+          <q-btn
+            class="text-xs text-[#575d6c]"
+            size="sm"
+            flat
+            round
+            icon="zoom_in_map"
+            @click="changeMenuStatus()"
+          >
+          </q-btn>
         </div>
+        <div class="text-lg">{{ title }}</div>
+      </div>
+      <q-separator class="mt-2" />
+      <div class="p-2">
+        <slot name="content"></slot>
       </div>
     </div>
     <div
@@ -30,7 +40,14 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
+import { PropType, ref } from 'vue';
+
+defineProps({
+  title: {
+    type: String as PropType<string>,
+    default: '工具栏',
+  },
+});
 
 const menuStatus = ref<'Min' | 'Max'>('Max');
 

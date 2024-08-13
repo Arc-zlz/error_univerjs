@@ -5,13 +5,13 @@
       container
       class="shadow-2 h-screen rounded-borders"
     >
-      <DocumentMenu>
+      <ProjectMenu>
         <router-view />
-      </DocumentMenu>
+      </ProjectMenu>
     </q-layout>
   </div>
 </template>
 
 <script setup lang="ts">
-import DocumentMenu from 'components/layout/DocumentMenu.vue';
+import ProjectMenu from 'components/layout/ProjectMenu.vue';
 </script>

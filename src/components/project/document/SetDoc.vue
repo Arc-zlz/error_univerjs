@@ -1,5 +1,5 @@
 <template>
-  <div>首页</div>
+  <div>设置文档</div>
 </template>
 
 <script setup lang="ts"></script>

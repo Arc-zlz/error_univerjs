@@ -61,7 +61,7 @@ import { ref } from 'vue';
 import LangSelect from 'components/layout/LangSelect.vue';
 import Breadcrumbs from 'components/layout/MenuBreadcrumbs.vue';
 import MenuList from 'components/layout/MenuList.vue';
-import { useSysStore } from 'stores/systemctl';
+import { useSysStore } from 'src/stores/systemctl';
 import { storeToRefs } from 'pinia';
 
 const sysStore = useSysStore();

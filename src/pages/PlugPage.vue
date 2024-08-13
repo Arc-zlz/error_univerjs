@@ -1,5 +1,5 @@
 <template>
-  <div>首页</div>
+  <div>插件管理</div>
 </template>
 
 <script setup lang="ts"></script>

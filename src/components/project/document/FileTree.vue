@@ -1,9 +1,69 @@
 <template>
   <div>
+    <div class="sticky pt-2 bg-white z-50 top-0">
+      <div class="text-lg cursor-pointer line-clamp-2 max-h-[100px] font-bold">
+        计算机编程语言
+        <q-tooltip anchor="center right" self="center start"
+          >计算机编程语言
+          这是标题这是标题这是标题这是标题这是标题这是标题这是标题计算机编程语言计算机编程语言
+        </q-tooltip>
+      </div>
+      <div class="flex justify-end">
+        <!-- 折叠目录页面 -->
+        <q-btn
+          class="text-xs text-[#575d6c]"
+          size="sm"
+          flat
+          round
+          icon="unfold_less"
+        >
+          <q-tooltip anchor="center right" self="center start">
+            折叠
+          </q-tooltip>
+        </q-btn>
+        <!-- 创建文件 -->
+        <q-btn
+          class="text-xs text-[#575d6c]"
+          size="sm"
+          flat
+          round
+          icon="note_add"
+        >
+          <q-tooltip anchor="center right" self="center start">
+            创建文件
+          </q-tooltip>
+        </q-btn>
+      </div>
+      <q-separator class="mt-2" />
+    </div>
     <vxeTree
       :data="data"
       :dragdrop="{ dropPrev: true, dropNext: true, dropInner: true }"
     >
+      <template #content="{ nodeData }">
+        <svg
+          style="margin-right: 8px"
+          viewBox="0 0 16 16"
+          width="16"
+          height="16"
+        >
+          <path
+            :d="`${
+              nodeData.isLeaf
+                ? 'M13,6 L9,6 L9,5 L9,2 L3,2 L3,14 L13,14 L13,6 Z M12.5857864,5 L10,2.41421356 L10,5 L12.5857864,5 Z M2,1 L10,1 L14,5 L14,15 L2,15 L2,1 Z'
+                : nodeData.expanded
+                ? 'M16,6 L14,14 L2,14 L0,6 L16,6 Z M14.7192236,7 L1.28077641,7 L2.78077641,13 L13.2192236,13 L14.7192236,7 Z M6,1 L8,3 L15,3 L15,5 L14,5 L14,4 L7.58578644,4 L5.58578644,2 L2,2 L2,5 L1,5 L1,1 L6,1 Z'
+                : 'M14,6 L14,5 L7.58578644,5 L5.58578644,3 L2,3 L2,6 L14,6 Z M14,7 L2,7 L2,13 L14,13 L14,7 Z M1,2 L6,2 L8,4 L15,4 L15,14 L1,14 L1,2 Z'
+            }`"
+            stroke-width="1"
+            fill="#8a8e99"
+          ></path>
+        </svg>
+        {{ nodeData.label }}
+        <q-tooltip anchor="center right" self="center start">
+          {{ nodeData.label }}
+        </q-tooltip>
+      </template>
       <template #icon="{ nodeData, toggleNode }">
         <span v-if="nodeData.isLeaf" class="devui-tree-node__indent"></span>
         <span
@@ -107,4 +167,4 @@ const data = ref([
 ]);
 </script>
 
-<style scoped></style>
+<style lang="scss" scoped></style>

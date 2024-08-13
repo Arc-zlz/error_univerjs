@@ -1,5 +1,5 @@
 <template>
-  <div>首页</div>
+  <div>思维导图</div>
 </template>
 
 <script setup lang="ts"></script>

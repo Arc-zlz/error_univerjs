@@ -40,7 +40,7 @@
 <script setup lang="ts">
 import { computed, reactive } from 'vue';
 import { useRoute } from 'vue-router';
-import { useSysStore } from 'stores/systemctl';
+import { useSysStore } from 'src/stores/systemctl';
 import { storeToRefs } from 'pinia';
 
 type menuItemType = {
@@ -64,10 +64,10 @@ const menuList = reactive<menuItemType[]>([
   },
   {
     id: 2,
-    icon: 'topic',
-    label: 'menu.document',
-    route: '/document',
-    name: 'document',
+    icon: 'folder_copy',
+    label: 'menu.project',
+    route: '/project',
+    name: 'project',
   },
   {
     id: 3,
@@ -75,6 +75,13 @@ const menuList = reactive<menuItemType[]>([
     label: 'menu.files',
     route: '/files',
     name: 'files',
+  },
+  {
+    id: 5,
+    icon: 'extension',
+    label: 'menu.plug',
+    route: '/plug',
+    name: 'plug',
   },
   {
     id: 4,
