@@ -62,34 +62,6 @@ const menuList = reactive<menuItemType[]>([
     route: '/',
     name: 'home',
   },
-  {
-    id: 2,
-    icon: 'folder_copy',
-    label: 'menu.project',
-    route: '/project',
-    name: 'project',
-  },
-  {
-    id: 3,
-    icon: 'cloud_sync',
-    label: 'menu.files',
-    route: '/files',
-    name: 'files',
-  },
-  {
-    id: 5,
-    icon: 'extension',
-    label: 'menu.plug',
-    route: '/plug',
-    name: 'plug',
-  },
-  {
-    id: 4,
-    icon: 'people_outline',
-    label: 'menu.aboutUs',
-    route: '/aboutUs',
-    name: 'aboutUs',
-  },
 ]);
 
 const changeMenuItem = computed({

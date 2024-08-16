@@ -30,7 +30,7 @@
           icon="note_add"
         >
           <q-tooltip anchor="center right" self="center start">
-            创建文件
+            新建文件
           </q-tooltip>
         </q-btn>
       </div>

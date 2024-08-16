@@ -14,17 +14,17 @@
           transition-show="flip-right"
           transition-hide="flip-left"
         >
-          <q-list dense>
+          <q-list dense class="text-[#575d6c]">
             <q-item clickable v-close-popup @click="handleAction('action1')">
               <q-item-section> 关闭当前 </q-item-section>
             </q-item>
             <q-item clickable @click="handleAction('action1')">
-              <q-item-section>关闭其他标签</q-item-section>
+              <q-item-section>更多关闭</q-item-section>
               <q-item-section side>
                 <q-icon name="keyboard_arrow_right" />
               </q-item-section>
               <q-menu anchor="top end" self="top start">
-                <q-list dense>
+                <q-list dense class="text-[#575d6c]">
                   <q-item
                     clickable
                     v-close-popup
@@ -46,6 +46,18 @@
                       <div>
                         <q-icon size="1.2rem" name="first_page" />
                         关闭右侧
+                      </div>
+                    </q-item-section>
+                  </q-item>
+                  <q-item
+                    clickable
+                    v-close-popup
+                    @click="handleAction('action2')"
+                  >
+                    <q-item-section>
+                      <div>
+                        <q-icon size="1.2rem" name="first_page" />
+                        关闭其他
                       </div>
                     </q-item-section>
                   </q-item>

@@ -3,10 +3,6 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-@import '@univerjs/design/lib/index.css';
-@import '@univerjs/ui/lib/index.css';
-@import '@univerjs/docs-ui/lib/index.css';
-
 /* 整体滚动条样式 */
 ::-webkit-scrollbar {
   width: 6px; /* 宽度适用于垂直滚动条 */
